@@ -8,12 +8,12 @@ export const metadata = {
 };
 
 const serviceGalleryImages = [
-  { src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop", alt: "أعمال العزل للأسطح" },
-  { src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop", alt: "معدات ومواد العزل الحديثة" },
-  { src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop", alt: "فريق العمل أثناء العزل الحراري" },
-  { src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop", alt: "أعمال البناء والعزل" },
-  { src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop", alt: "خدمات عزل المسابح" },
-  { src: "https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?q=80&w=800&auto=format&fit=crop", alt: "فني متخصص في فحص التسربات" }
+  { src: "/images/services/roof-waterproofing.webp", alt: "تركيب لفائف العزل المائي على سطح خرساني" },
+  { src: "/images/services/thermal-insulation.webp", alt: "تركيب ألواح العزل الحراري على سطح مبنى" },
+  { src: "/images/services/spray-foam-insulation.webp", alt: "تطبيق عزل فوم البولي يوريثان على سطح معدني" },
+  { src: "/images/services/water-tank-waterproofing.webp", alt: "تنفيذ العزل الداخلي لخزان مياه خرساني" },
+  { src: "/images/services/pool-waterproofing.webp", alt: "تطبيق طبقة العزل المائي داخل مسبح" },
+  { src: "/images/services/leak-detection.webp", alt: "فني يكشف تسرب مياه بجهاز التصوير الحراري دون تكسير" }
 ];
 
 const servicesList = [

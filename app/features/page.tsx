@@ -58,7 +58,7 @@ export default function FeaturesPage() {
             </ul>
           </div>
           <div className="lg:w-1/2 h-full min-h-[500px] relative">
-            <Image src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop" alt="الجودة في العمل" fill className="object-cover" referrerPolicy="no-referrer" />
+            <Image src="/images/services/leak-detection.webp" alt="فحص دقيق لتسرب المياه باستخدام جهاز التصوير الحراري" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
           </div>
         </div>
       </div>
