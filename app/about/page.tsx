@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="flex flex-col lg:flex-row items-center gap-16 mb-20">
           <div className="lg:w-1/2">
             <div className="relative">
-              <Image src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop" alt="فريق العمل" width={800} height={600} className="rounded-2xl shadow-2xl object-cover h-[500px]" referrerPolicy="no-referrer" />
+              <Image src="/images/insulation-team.webp" alt="فريق عوازل القصيم يراجع جودة العزل على سطح مبنى" width={800} height={600} sizes="(max-width: 1024px) 100vw, 50vw" className="rounded-2xl shadow-2xl object-cover h-[500px]" />
               <div className="absolute -bottom-8 -right-8 bg-blue-600 text-white p-8 rounded-2xl hidden md:block border-4 border-white">
                 <div className="text-5xl font-black mb-2">15+</div>
                 <div className="font-medium text-blue-100 text-lg">عاماً من الخبرة<br/>في مجال العزل</div>

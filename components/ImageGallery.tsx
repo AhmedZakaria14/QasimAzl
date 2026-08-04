@@ -31,7 +31,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               alt={image.alt}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
-              referrerPolicy="no-referrer"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span className="text-white bg-blue-600/80 px-4 py-2 rounded-lg font-medium backdrop-blur-sm">

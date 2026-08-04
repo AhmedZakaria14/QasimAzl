@@ -47,12 +47,12 @@ export default function Home() {
       <section className="relative min-h-[600px] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1920&auto=format&fit=crop"
-            alt="أعمال العزل"
+            src="/images/hero-roof-insulation.webp"
+            alt="فنيون يطبقون العزل المائي والحراري على سطح مبنى في القصيم"
             fill
             className="object-cover"
             priority
-            referrerPolicy="no-referrer"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-slate-900/75 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-gradient-to-l from-blue-900/80 to-transparent"></div>
@@ -137,12 +137,12 @@ export default function Home() {
             <div className="lg:w-1/2">
               <div className="relative">
                 <Image 
-                  src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop"
-                  alt="فريق العمل"
+                  src="/images/insulation-team.webp"
+                  alt="فريق عوازل القصيم يفحص جودة العزل بعد التنفيذ"
                   width={800}
                   height={600}
                   className="rounded-2xl shadow-2xl object-cover h-[500px]"
-                  referrerPolicy="no-referrer"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute -bottom-8 -right-8 bg-blue-600 text-white p-8 rounded-2xl hidden md:block border-4 border-white">
                   <div className="text-5xl font-black mb-2">15+</div>
