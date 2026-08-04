@@ -1,0 +1,8 @@
+{
+  "name": "شركة عزل بالقصيم",
+  "description": "أفضل شركة عزل مائي وحراري وعزل فوم وكشف تسربات المياه في منطقة القصيم.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
