@@ -2,14 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PhoneCall, Droplet, Menu, X, MapPin, Clock, Facebook, Twitter, Instagram } from "lucide-react";
-import * as motion from "motion/react-client";
-import { useState } from "react";
+import { PhoneCall, Menu, X, MapPin, Clock, Facebook, Twitter, Instagram, ChevronLeft } from "lucide-react";
+import { useEffect, useState } from "react";
 import LogoIcon from "@/components/LogoIcon";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { href: "/", label: "الرئيسية" },
@@ -21,87 +25,76 @@ export default function Header() {
 
   return (
     <>
-      {/* Topbar */}
-      <div className="bg-blue-900 text-white py-2 px-4 hidden md:block text-sm">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-blue-300" /> القصيم - بريدة - عنيزة - الرس</span>
-            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-blue-300" /> خدمة على مدار 24 ساعة</span>
+      <div className="bg-[#291686] text-white py-2.5 px-4 text-sm">
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-7 overflow-hidden">
+            <span className="flex items-center gap-2 whitespace-nowrap"><MapPin className="w-4 h-4 text-[#a9d66c]" /> القصيم - بريدة - عنيزة - الرس</span>
+            <span className="hidden sm:flex items-center gap-2 whitespace-nowrap"><Clock className="w-4 h-4 text-[#a9d66c]" /> خدمة على مدار 24 ساعة</span>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-blue-300 transition-colors"><Facebook className="w-4 h-4" /></a>
-            <a href="#" className="hover:text-blue-300 transition-colors"><Twitter className="w-4 h-4" /></a>
-            <a href="#" className="hover:text-blue-300 transition-colors"><Instagram className="w-4 h-4" /></a>
+          <div className="hidden md:flex items-center gap-3">
+            <a href="#" aria-label="فيسبوك" className="hover:text-[#a9d66c] transition-colors"><Facebook className="w-4 h-4" /></a>
+            <a href="#" aria-label="تويتر" className="hover:text-[#a9d66c] transition-colors"><Twitter className="w-4 h-4" /></a>
+            <a href="#" aria-label="إنستغرام" className="hover:text-[#a9d66c] transition-colors"><Instagram className="w-4 h-4" /></a>
           </div>
         </div>
       </div>
 
-      {/* Navbar */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3">
-            <LogoIcon className="w-12 h-12" />
+      <header className="bg-white/95 backdrop-blur-xl shadow-[0_8px_35px_rgba(41,22,134,.08)] sticky top-0 z-50 border-b border-[#ece8f7]">
+        <div className="max-w-7xl mx-auto px-4 min-h-[86px] flex justify-between items-center gap-5">
+          <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="العودة إلى الرئيسية">
+            <LogoIcon className="w-14 h-14" />
             <div>
-              <h1 className="text-2xl font-bold text-blue-900 leading-none tracking-tight">عوازل القصيم</h1>
-              <p className="text-xs text-slate-500 font-medium mt-1">للعزل وكشف التسربات</p>
+              <p className="text-2xl font-black text-[#291686] leading-none tracking-tight">عوازل القصيم</p>
+              <p className="text-xs text-slate-500 font-semibold mt-1.5">للعزل وكشف التسربات</p>
             </div>
           </Link>
 
-          {/* Desktop Nav - adjusted spacing with gap-10 for better layout */}
-          <nav className="hidden md:flex items-center gap-10 font-bold text-slate-700">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`transition-colors hover:text-blue-600 ${pathname === link.href ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'pb-1'}`}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden lg:flex items-center gap-8 font-bold text-slate-700">
+            {navLinks.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link key={link.href} href={link.href} className={`relative py-8 transition-colors hover:text-[#291686] ${active ? "text-[#291686]" : ""}`}>
+                  {link.label}
+                  <span className={`absolute bottom-4 right-0 h-[3px] rounded-full bg-[#7bbb3f] transition-all ${active ? "w-full" : "w-0"}`} />
+                </Link>
+              );
+            })}
           </nav>
 
-          <div className="hidden md:flex">
-            <a href="tel:+966500000000" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-lg shadow-blue-200 transition-transform hover:scale-105">
+          <div className="hidden md:flex items-center gap-3">
+            <a href="tel:+966500000000" className="bg-[#291686] hover:bg-[#1d0e63] text-white px-5 py-3 rounded-md font-bold flex items-center gap-2 shadow-lg transition-all hover:-translate-y-0.5">
               <PhoneCall className="w-5 h-5" />
               <span dir="ltr">050 000 0000</span>
             </a>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden text-slate-700 p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <button className="lg:hidden w-12 h-12 rounded-full bg-[#291686] text-white flex items-center justify-center shadow-lg" onClick={() => setIsMobileMenuOpen(true)} aria-label="فتح القائمة">
+            <Menu className="w-6 h-6" />
           </button>
         </div>
-
-        {/* Mobile Nav */}
-        {isMobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
-          >
-            <div className="flex flex-col p-4 space-y-4 text-slate-700 font-medium">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={pathname === link.href ? 'text-blue-600 font-bold' : ''}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <a href="tel:+966500000000" className="bg-blue-600 text-white px-4 py-3 rounded-lg text-center font-bold flex justify-center items-center gap-2 mt-4">
-                <PhoneCall className="w-5 h-5" />
-                <span dir="ltr">050 000 0000</span>
-              </a>
-            </div>
-          </motion.div>
-        )}
       </header>
+
+      <div className={`fixed inset-0 z-[70] lg:hidden transition ${isMobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"}`} aria-hidden={!isMobileMenuOpen}>
+        <button className={`absolute inset-0 bg-black/65 backdrop-blur-sm transition-opacity ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}`} onClick={() => setIsMobileMenuOpen(false)} aria-label="إغلاق القائمة" />
+        <aside className={`absolute top-0 right-0 h-full w-[min(88vw,340px)] bg-white shadow-2xl transition-transform duration-300 ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
+          <div className="bg-[#291686] text-white p-6 flex items-center justify-between">
+            <div className="flex items-center gap-3"><LogoIcon className="w-12 h-12" /><strong>عوازل القصيم</strong></div>
+            <button onClick={() => setIsMobileMenuOpen(false)} aria-label="إغلاق"><X className="w-7 h-7" /></button>
+          </div>
+          <nav className="p-3">
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center justify-between px-5 py-4 border-b border-slate-100 font-bold ${pathname === link.href ? "text-[#291686] bg-[#f4f1ff]" : "text-slate-700"}`}>
+                {link.label}<ChevronLeft className="w-4 h-4" />
+              </Link>
+            ))}
+          </nav>
+          <div className="p-5">
+            <a href="tel:+966500000000" className="bg-[#291686] text-white px-4 py-3.5 rounded-md flex justify-center items-center gap-2 font-bold">
+              <PhoneCall className="w-5 h-5" /><span dir="ltr">050 000 0000</span>
+            </a>
+          </div>
+        </aside>
+      </div>
     </>
   );
 }
