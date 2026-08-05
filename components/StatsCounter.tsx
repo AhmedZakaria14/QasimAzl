@@ -11,25 +11,20 @@ const stats = [
 
 export default function StatsCounter() {
   return (
-    <div className="bg-white py-16 sm:py-20 border-t border-slate-100">
+    <section className="bg-[#f7f3fb] py-16 sm:py-20 border-y border-[#e9e2f0]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4 sm:grid-cols-2">
+        <dl className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.id} className="mx-auto flex max-w-xs flex-col gap-y-4">
-              <dt className="text-base/7 text-slate-600 font-medium">{stat.name}</dt>
-              <dd className="order-first text-5xl font-bold tracking-tight text-blue-600">
-                <CountUp 
-                  end={stat.value} 
-                  suffix={stat.suffix} 
-                  enableScrollSpy={true}
-                  scrollSpyOnce={true}
-                  duration={2.5}
-                />
+            <div key={stat.id} className="flex flex-col items-center justify-center text-center bg-white rounded-2xl border border-[#e9e2f0] px-4 py-8 shadow-[0_12px_35px_rgba(44,27,74,.06)]">
+              <dd className="text-4xl md:text-5xl font-black tracking-tight text-[#4a2a8a] leading-none">
+                <CountUp end={stat.value} suffix={stat.suffix} enableScrollSpy scrollSpyOnce duration={2.5} />
               </dd>
+              <dt className="mt-4 text-sm md:text-base text-[#6f687b] font-bold">{stat.name}</dt>
+              <span className="mt-4 h-1 w-10 rounded-full bg-[#7aa84f]" />
             </div>
           ))}
         </dl>
       </div>
-    </div>
+    </section>
   );
 }
