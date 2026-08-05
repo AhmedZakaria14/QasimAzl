@@ -5,7 +5,11 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
 
-const cairo = Cairo({ subsets: ['arabic', 'latin'] });
+const cairo = Cairo({
+  subsets: ['arabic', 'latin'],
+  variable: '--font-cairo',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'شركة عزل بالقصيم - أفضل خدمات العزل المائي والحراري والفوم',
@@ -15,9 +19,9 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={cairo.className} suppressHydrationWarning>
+      <body className={`${cairo.variable} ${cairo.className}`} suppressHydrationWarning>
         <Header />
-        <main className="min-h-screen bg-slate-50 text-slate-800 flex flex-col">
+        <main className="site-main min-h-screen text-slate-800 flex flex-col">
           {children}
         </main>
         <Footer />
