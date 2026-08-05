@@ -1,7 +1,6 @@
 import type {Metadata} from 'next';
 import { Cairo } from 'next/font/google';
 import './globals.css';
-import './theme.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
