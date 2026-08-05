@@ -4,20 +4,20 @@ import LogoIcon from "@/components/LogoIcon";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#201044] text-[#ddd6ea] pt-20 pb-8 relative overflow-hidden">
-      <div className="absolute -top-32 -left-24 w-96 h-96 rounded-full bg-[#7aa84f]/10 blur-3xl" />
-      <div className="absolute -bottom-36 -right-20 w-96 h-96 rounded-full bg-[#7b5bb5]/10 blur-3xl" />
+    <footer className="bg-[#0b2530] text-[#dbe7ea] pt-20 pb-8 relative overflow-hidden">
+      <div className="absolute -top-32 -left-24 w-96 h-96 rounded-full bg-[#72b7c3]/10 blur-3xl" />
+      <div className="absolute -bottom-36 -right-20 w-96 h-96 rounded-full bg-[#2f7d8b]/10 blur-3xl" />
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
           <div>
             <Link href="/" className="flex items-center gap-3 mb-6 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
               <LogoIcon className="w-14 h-14" />
-              <div><h2 className="text-2xl font-black text-white">عوازل القصيم</h2><p className="text-xs text-[#bdb4d1] mt-1">للعزل وكشف التسربات</p></div>
+              <div><h2 className="text-2xl font-black text-white">عوازل القصيم</h2><p className="text-xs text-[#b9cbd0] mt-1">للعزل وكشف التسربات</p></div>
             </Link>
-            <p className="leading-8 text-[#c9c1d9] mb-6">الشركة الرائدة في مجال العزل المائي والحراري وعزل الفوم وكشف تسربات المياه في منطقة القصيم.</p>
+            <p className="leading-8 text-[#c9d9dd] mb-6">الشركة الرائدة في مجال العزل المائي والحراري وعزل الفوم وكشف تسربات المياه في منطقة القصيم.</p>
             <div className="flex gap-3">
               {[Facebook, Twitter, Instagram].map((Icon, index) => (
-                <a key={index} href="#" aria-label="حساب التواصل الاجتماعي" className="w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center text-[#ddd6ea] hover:bg-[#4f742d] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 transition-colors"><Icon className="w-5 h-5" /></a>
+                <a key={index} href="#" aria-label="حساب التواصل الاجتماعي" className="w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center text-[#dbe7ea] hover:bg-[#2f7d8b] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 transition-colors"><Icon className="w-5 h-5" /></a>
               ))}
             </div>
           </div>
@@ -28,14 +28,14 @@ export default function Footer() {
           <div>
             <FooterTitle>معلومات التواصل</FooterTitle>
             <ul className="space-y-5">
-              <li className="flex items-start gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><MapPin className="w-6 h-6 text-[#a8c77d] shrink-0 mt-1" /><span>المملكة العربية السعودية<br/>القصيم - بريدة</span></li>
-              <li className="flex items-center gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><Phone className="w-6 h-6 text-[#a8c77d] shrink-0" /><span dir="ltr" className="font-bold text-white">050 000 0000</span></li>
-              <li className="flex items-center gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><Mail className="w-6 h-6 text-[#a8c77d] shrink-0" /><span className="break-all">info@qassim-insulation.com</span></li>
+              <li className="flex items-start gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><MapPin className="w-6 h-6 text-[#72b7c3] shrink-0 mt-1" /><span>المملكة العربية السعودية<br/>القصيم - بريدة</span></li>
+              <li className="flex items-center gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><Phone className="w-6 h-6 text-[#72b7c3] shrink-0" /><span dir="ltr" className="font-bold text-white">050 000 0000</span></li>
+              <li className="flex items-center gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><Mail className="w-6 h-6 text-[#72b7c3] shrink-0" /><span className="break-all">info@qassim-insulation.com</span></li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-7 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-[#aaa1bd]">
+        <div className="border-t border-white/10 pt-7 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-[#9fb3b9]">
           <p>جميع الحقوق محفوظة &copy; {new Date().getFullYear()} شركة عوازل القصيم.</p>
           <p>تصميم احترافي متوافق مع جميع الأجهزة</p>
         </div>
@@ -45,9 +45,9 @@ export default function Footer() {
 }
 
 function FooterTitle({children}: {children: React.ReactNode}) {
-  return <h4 className="text-white text-lg font-black mb-7 relative pb-3 after:absolute after:right-0 after:bottom-0 after:w-12 after:h-1 after:rounded-full after:bg-[#a8c77d]">{children}</h4>;
+  return <h4 className="text-white text-lg font-black mb-7 relative pb-3 after:absolute after:right-0 after:bottom-0 after:w-12 after:h-1 after:rounded-full after:bg-[#72b7c3]">{children}</h4>;
 }
 
 function FooterColumn({title, items}: {title: string; items: string[][]}) {
-  return <div><FooterTitle>{title}</FooterTitle><ul className="space-y-3">{items.map(([label, href]) => <li key={label}><Link href={href} className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-[#ddd6ea] hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 transition-colors"><ChevronLeft className="w-4 h-4 text-[#a8c77d]" />{label}</Link></li>)}</ul></div>;
+  return <div><FooterTitle>{title}</FooterTitle><ul className="space-y-3">{items.map(([label, href]) => <li key={label}><Link href={href} className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-[#dbe7ea] hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 transition-colors"><ChevronLeft className="w-4 h-4 text-[#72b7c3]" />{label}</Link></li>)}</ul></div>;
 }
