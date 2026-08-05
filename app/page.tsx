@@ -68,9 +68,9 @@ export default function Home() {
               <span className="inline-block py-1 px-3 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-sm font-semibold mb-6">
                 الخيار الأول في القصيم
               </span>
-              <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                خبراء العزل المائي <br/>
-                <span className="text-blue-400">والحراري وعزل الفوم</span>
+              <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.65)]">
+                <span className="text-[#dff5a6]">خبراء العزل المائي</span> <br/>
+                <span className="!text-white">والحراري وعزل الفوم</span>
               </h2>
               <p className="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed max-w-xl">
                 نقدم أفضل حلول العزل المتكاملة للأسطح والخزانات والمسابح بأحدث التقنيات وأجود المواد، مع ضمان شامل يصل إلى 10 سنوات على كافة أعمالنا.
