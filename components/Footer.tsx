@@ -37,7 +37,18 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-7 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-[#aaa2ce]">
           <p>جميع الحقوق محفوظة &copy; {new Date().getFullYear()} شركة عوازل القصيم.</p>
-          <p>تصميم احترافي متوافق مع جميع الأجهزة</p>
+          <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center leading-7 text-[#c9c3e3]">
+            <span>تم التصميم والبرمجة بواسطة</span>
+            <a
+              href="https://nasharhub.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              dir="ltr"
+              className="inline-flex min-h-11 items-center rounded-full border border-[#a9d66c]/25 bg-white/5 px-4 py-1 font-bold text-[#a9d66c] transition-colors hover:border-[#a9d66c]/60 hover:bg-[#a9d66c]/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a9d66c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1d0e63]"
+            >
+              NasharHub
+            </a>
+          </p>
         </div>
       </div>
     </footer>
