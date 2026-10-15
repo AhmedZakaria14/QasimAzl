@@ -25,11 +25,11 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-[#291686] text-white px-4 text-sm border-b border-white/10">
+      <div className="bg-primary text-white px-4 text-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto min-h-10 flex justify-between items-center gap-4">
           <div className="flex items-center gap-3 md:gap-7 overflow-hidden">
-            <span className="flex items-center gap-2 whitespace-nowrap"><MapPin className="w-4 h-4 text-[#a9d66c]" />القصيم - بريدة - عنيزة - الرس</span>
-            <span className="hidden sm:flex items-center gap-2 whitespace-nowrap text-[#ded9f3]"><Clock className="w-4 h-4 text-[#a9d66c]" />خدمة على مدار 24 ساعة</span>
+            <span className="flex items-center gap-2 whitespace-nowrap"><MapPin className="w-4 h-4 text-accent" />القصيم - بريدة - عنيزة - الرس</span>
+            <span className="hidden sm:flex items-center gap-2 whitespace-nowrap text-[#ded9f3]"><Clock className="w-4 h-4 text-accent" />خدمة على مدار 24 ساعة</span>
           </div>
           <div className="hidden md:flex items-center gap-2">
             {[Facebook, Twitter, Instagram].map((Icon, index) => (
@@ -39,25 +39,25 @@ export default function Header() {
         </div>
       </div>
 
-      <header className="bg-white/95 backdrop-blur-xl sticky top-0 z-50 border-b border-[#ece8f7] shadow-[0_8px_35px_rgba(41,22,134,.08)]">
+      <header className="bg-white/95 backdrop-blur-xl sticky top-0 z-50 border-b border-border shadow-xl">
         <div className="max-w-7xl mx-auto px-4 min-h-[88px] flex justify-between items-center gap-6">
           <Link href="/" className="flex items-center gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#291686]/20 rounded-xl" aria-label="العودة إلى الرئيسية">
             <div className="transition-transform duration-300 group-hover:scale-105"><LogoIcon className="w-14 h-14" /></div>
-            <div><p className="text-[1.45rem] font-black text-[#291686] leading-none tracking-tight">عوازل القصيم</p><p className="text-xs text-slate-500 font-semibold mt-1.5">للعزل وكشف التسربات</p></div>
+            <div><p className="text-[1.45rem] font-black text-primary leading-none tracking-tight">عوازل القصيم</p><p className="text-xs text-muted font-semibold mt-1.5">للعزل وكشف التسربات</p></div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-2 font-bold text-slate-700 bg-[#f8f7fc] border border-[#ece8f7] rounded-full px-2 py-1.5" aria-label="القائمة الرئيسية">
+          <nav className="hidden lg:flex items-center gap-2 font-bold text-muted bg-surface-soft border border-border rounded-full px-2 py-1.5" aria-label="القائمة الرئيسية">
             {navLinks.map((link) => {
               const active = pathname === link.href;
-              return <Link key={link.href} href={link.href} aria-current={active ? "page" : undefined} className={`relative px-4 py-2.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#291686]/35 ${active ? "bg-white text-[#291686] shadow-sm" : "hover:bg-white hover:text-[#291686]"}`}>{link.label}</Link>;
+              return <Link key={link.href} href={link.href} aria-current={active ? "page" : undefined} className={`relative px-4 py-2.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35 ${active ? "bg-white text-primary shadow-sm" : "hover:bg-white hover:text-primary"}`}>{link.label}</Link>;
             })}
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <a href="tel:+966500000000" className="bg-[#291686] hover:bg-[#1d0e63] text-white px-5 py-3 rounded-xl font-bold flex items-center gap-2 shadow-[0_12px_28px_rgba(41,22,134,.2)] transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#291686]/25"><PhoneCall className="w-5 h-5" /><span dir="ltr">050 000 0000</span></a>
+            <a href="tel:+966500000000" className="bg-primary hover:bg-primary-dark text-white px-5 py-3 rounded-xl font-bold flex items-center gap-2 shadow-[0_12px_28px_rgba(41,22,134,.2)] transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/25"><PhoneCall className="w-5 h-5" /><span dir="ltr">050 000 0000</span></a>
           </div>
 
-          <button className="lg:hidden w-12 h-12 rounded-xl bg-[#291686] text-white flex items-center justify-center shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#291686]/25" onClick={() => setIsMobileMenuOpen(true)} aria-label="فتح القائمة" aria-expanded={isMobileMenuOpen}><Menu className="w-6 h-6" /></button>
+          <button className="lg:hidden w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/25" onClick={() => setIsMobileMenuOpen(true)} aria-label="فتح القائمة" aria-expanded={isMobileMenuOpen}><Menu className="w-6 h-6" /></button>
         </div>
       </header>
 
@@ -71,10 +71,10 @@ export default function Header() {
           <nav className="p-4 space-y-2 flex-1" aria-label="قائمة الهاتف">
             {navLinks.map((link) => {
               const active = pathname === link.href;
-              return <Link key={link.href} href={link.href} aria-current={active ? "page" : undefined} onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center justify-between px-5 py-4 rounded-xl font-bold transition-colors ${active ? "text-[#291686] bg-[#f4f1ff]" : "text-slate-700 hover:bg-[#f8f7fc]"}`}>{link.label}<ChevronLeft className="w-4 h-4 text-[#7bbb3f]" /></Link>;
+              return <Link key={link.href} href={link.href} aria-current={active ? "page" : undefined} onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center justify-between px-5 py-4 rounded-xl font-bold transition-colors ${active ? "text-primary bg-primary-soft" : "text-muted hover:bg-surface-soft"}`}>{link.label}<ChevronLeft className="w-4 h-4 text-accent" /></Link>;
             })}
           </nav>
-          <div className="p-5"><a href="tel:+966500000000" className="bg-[#291686] text-white px-4 py-3.5 rounded-xl flex justify-center items-center gap-2 font-bold shadow-lg"><PhoneCall className="w-5 h-5" /><span dir="ltr">050 000 0000</span></a></div>
+          <div className="p-5"><a href="tel:+966500000000" className="bg-primary text-white px-4 py-3.5 rounded-xl flex justify-center items-center gap-2 font-bold shadow-lg"><PhoneCall className="w-5 h-5" /><span dir="ltr">050 000 0000</span></a></div>
         </aside>
       </div>
     </>

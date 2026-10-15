@@ -65,19 +65,19 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block py-1 px-3 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-sm font-semibold mb-6">
+              <span className="inline-block py-1 px-3 rounded-full bg-primary-soft/20 border border-primary-soft/30 text-primary-soft text-sm font-semibold mb-6">
                 الخيار الأول في القصيم
               </span>
               <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.65)]">
                 <span className="text-[#dff5a6]">خبراء العزل المائي</span> <br/>
                 <span className="!text-white">والحراري وعزل الفوم</span>
               </h2>
-              <p className="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-primary-soft mb-10 leading-relaxed max-w-xl">
                 نقدم أفضل حلول العزل المتكاملة للأسطح والخزانات والمسابح بأحدث التقنيات وأجود المواد، مع ضمان شامل يصل إلى 10 سنوات على كافة أعمالنا.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+966500000000" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-3 transition-colors shadow-lg">
+                <a href="tel:+966500000000" className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-3 transition-colors shadow-lg">
                   <PhoneCall className="w-6 h-6" />
                   <span>اتصل بنا الآن</span>
                 </a>
@@ -91,12 +91,12 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-surface-soft">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h3 className="text-blue-600 font-bold mb-2">خدماتنا</h3>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">أفضل خدمات العزل المتكاملة</h2>
-            <p className="text-slate-600 text-lg">
+            <h3 className="text-primary font-bold mb-2">خدماتنا</h3>
+            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-6">أفضل خدمات العزل المتكاملة</h2>
+            <p className="text-muted text-lg">
               نقدم مجموعة واسعة من خدمات العزل وكشف التسربات بأعلى معايير الجودة لضمان حماية مبناك من التلف والعوامل الجوية.
             </p>
           </div>
@@ -108,21 +108,21 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 hover:shadow-xl hover:border-blue-100 transition-all group"
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 hover:shadow-2xl hover:-translate-y-2 hover:border-border transition-all group"
               >
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="w-16 h-16 bg-primary-soft rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                   {service.icon}
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h4>
-                <p className="text-slate-600 leading-relaxed mb-6">
+                <h4 className="text-xl font-bold text-ink mb-4">{service.title}</h4>
+                <p className="text-muted leading-relaxed mb-6">
                   {service.desc}
                 </p>
               </motion.div>
             ))}
           </div>
           <div className="text-center">
-            <Link href="/services" className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-bold transition-colors">
+            <Link href="/services" className="inline-flex items-center gap-2 bg-primary-soft text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-bold transition-colors">
               <span>عرض جميع الخدمات والتفاصيل</span>
               <ChevronLeft className="w-5 h-5" />
             </Link>
@@ -144,17 +144,17 @@ export default function Home() {
                   className="rounded-2xl shadow-2xl object-cover h-[500px]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute -bottom-8 -right-8 bg-blue-600 text-white p-8 rounded-2xl hidden md:block border-4 border-white">
+                <div className="absolute -bottom-8 -right-8 bg-primary text-white p-8 rounded-2xl hidden md:block border-4 border-white">
                   <div className="text-5xl font-black mb-2">15+</div>
-                  <div className="font-medium text-blue-100 text-lg">عاماً من الخبرة<br/>في مجال العزل</div>
+                  <div className="font-medium text-primary-soft text-lg">عاماً من الخبرة<br/>في مجال العزل</div>
                 </div>
               </div>
             </div>
             
             <div className="lg:w-1/2">
-              <h3 className="text-blue-600 font-bold mb-2">من نحن</h3>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">الشركة الرائدة في مجال العزل بمنطقة القصيم</h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-8">
+              <h3 className="text-primary font-bold mb-2">من نحن</h3>
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-6">الشركة الرائدة في مجال العزل بمنطقة القصيم</h2>
+              <p className="text-muted text-lg leading-relaxed mb-8">
                 نحن شركة متخصصة في تقديم جميع خدمات العزل المائي والحراري وعزل الفوم وكشف تسربات المياه بأحدث التقنيات والأجهزة الحديثة. نفخر بخدمة عملائنا في جميع مدن القصيم.
               </p>
               
@@ -167,8 +167,8 @@ export default function Home() {
                   "ضمان حقيقي يصل إلى 10 سنوات"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-500 shrink-0" />
-                    <span className="text-slate-700 font-medium">{item}</span>
+                    <CheckCircle className="w-6 h-6 text-accent shrink-0" />
+                    <span className="text-muted font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -185,14 +185,14 @@ export default function Home() {
       <StatsCounter />
 
       {/* Features / Why Choose Us */}
-      <section className="py-24 bg-blue-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-800 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-800 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
+      <section className="py-24 bg-primary-dark text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">لماذا تختار عوازل القصيم؟</h2>
-            <p className="text-blue-200 text-lg">
+            <p className="text-primary-soft text-lg">
               نحن نلتزم بتقديم أفضل الخدمات بأعلى معايير الجودة لضمان رضا عملائنا التام
             </p>
           </div>
@@ -204,18 +204,18 @@ export default function Home() {
               { icon: <Clock className="w-8 h-8" />, title: "سرعة الإنجاز", desc: "نلتزم بالمواعيد المحددة وننجز العمل بأسرع وقت ممكن وبدقة." },
               { icon: <Phone className="w-8 h-8" />, title: "دعم فني", desc: "فريق الدعم الفني متواجد على مدار الساعة للرد على استفساراتكم." }
             ].map((feature, idx) => (
-              <div key={idx} className="bg-blue-800/40 border border-blue-700/50 p-8 rounded-2xl text-center backdrop-blur-sm">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div key={idx} className="bg-primary/40 border border-primary/50 p-8 rounded-2xl text-center backdrop-blur-sm">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                   {feature.icon}
                 </div>
                 <h4 className="text-xl font-bold mb-4">{feature.title}</h4>
-                <p className="text-blue-200 leading-relaxed">{feature.desc}</p>
+                <p className="text-primary-soft leading-relaxed">{feature.desc}</p>
               </div>
             ))}
           </div>
           
           <div className="text-center">
-            <Link href="/features" className="inline-flex items-center gap-2 bg-blue-800 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold transition-colors border border-blue-600">
+            <Link href="/features" className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-bold transition-colors border border-primary">
               <span>اكتشف المزيد من مميزاتنا</span>
               <ChevronLeft className="w-5 h-5" />
             </Link>
@@ -226,17 +226,17 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="bg-blue-50 rounded-3xl p-10 md:p-16 text-center border border-blue-100">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">هل تعاني من مشاكل تسرب المياه أو الحرارة؟</h2>
-            <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
+          <div className="bg-primary-soft rounded-3xl p-10 md:p-16 text-center border border-border">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-6">هل تعاني من مشاكل تسرب المياه أو الحرارة؟</h2>
+            <p className="text-lg text-muted mb-10 max-w-2xl mx-auto">
               لا تتردد في التواصل معنا الآن. فريقنا جاهز لتقديم الفحص المجاني وتقديم أفضل الحلول المناسبة لمشكلتك.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="tel:+966500000000" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-3 transition-colors">
+              <a href="tel:+966500000000" className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-3 transition-colors">
                 <PhoneCall className="w-6 h-6" />
                 <span dir="ltr">050 000 0000</span>
               </a>
-              <Link href="/contact" className="bg-white hover:bg-blue-50 text-blue-700 border border-blue-200 px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center transition-colors">
+              <Link href="/contact" className="bg-white hover:bg-primary-dark text-primary border border-border px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center transition-colors">
                 <span>تواصل معنا للمزيد</span>
               </Link>
             </div>
