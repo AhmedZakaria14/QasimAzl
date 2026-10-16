@@ -1,10 +1,37 @@
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import MapWrapper from "@/components/MapWrapper";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: 'اتصل بنا - عوازل القصيم',
   description: 'تواصل مع شركة عوازل القصيم لطلب خدمات العزل وكشف التسربات',
 };
+
+const contactDetails = [
+  {
+    Icon: Phone,
+    title: "رقم الهاتف",
+    lines: [
+      <a key="p1" href="tel:+966500000000" dir="ltr" className="font-bold text-[#291686] hover:underline rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#291686]/40">050 000 0000</a>,
+      <a key="p2" href="tel:+966550000000" dir="ltr" className="font-bold text-[#291686] hover:underline rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#291686]/40">055 000 0000</a>,
+    ],
+  },
+  {
+    Icon: MapPin,
+    title: "العنوان",
+    lines: ["المملكة العربية السعودية، القصيم، بريدة", "نغطي كافة مناطق القصيم (عنيزة، الرس، البكيرية، المذنب، البدائع)"],
+  },
+  {
+    Icon: Mail,
+    title: "البريد الإلكتروني",
+    lines: [<a key="m1" href="mailto:info@qassim-insulation.com" className="break-all text-[#291686] hover:underline rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#291686]/40">info@qassim-insulation.com</a>],
+  },
+  {
+    Icon: Clock,
+    title: "ساعات العمل",
+    lines: ["خدمة العملاء: على مدار 24 ساعة / 7 أيام في الأسبوع"],
+  },
+];
 
 export default function ContactPage() {
   return (
@@ -17,41 +44,25 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h3 className="text-2xl font-bold mb-8">معلومات التواصل</h3>
+            <h2 className="text-2xl font-bold mb-8">معلومات التواصل</h2>
             <div className="space-y-6">
-              <div className="contact-detail surface-card flex items-start gap-4 rounded-2xl border p-5">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0"><Phone className="w-6 h-6" /></div>
-                <div><h4 className="font-bold text-lg mb-1">رقم الهاتف</h4><p className="font-bold" dir="ltr">050 000 0000</p><p className="font-bold" dir="ltr">055 000 0000</p></div>
-              </div>
-              <div className="contact-detail surface-card flex items-start gap-4 rounded-2xl border p-5">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0"><MapPin className="w-6 h-6" /></div>
-                <div><h4 className="font-bold text-lg mb-1">العنوان</h4><p>المملكة العربية السعودية، القصيم، بريدة</p><p>نغطي كافة مناطق القصيم (عنيزة، الرس، البكيرية، المذنب، البدائع)</p></div>
-              </div>
-              <div className="contact-detail surface-card flex items-start gap-4 rounded-2xl border p-5">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0"><Mail className="w-6 h-6" /></div>
-                <div><h4 className="font-bold text-lg mb-1">البريد الإلكتروني</h4><p className="break-all">info@qassim-insulation.com</p></div>
-              </div>
-              <div className="contact-detail surface-card flex items-start gap-4 rounded-2xl border p-5">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0"><Clock className="w-6 h-6" /></div>
-                <div><h4 className="font-bold text-lg mb-1">ساعات العمل</h4><p>خدمة العملاء: على مدار 24 ساعة / 7 أيام في الأسبوع</p></div>
-              </div>
+              {contactDetails.map(({ Icon, title, lines }) => (
+                <div key={title} className="contact-detail surface-card flex items-start gap-4 rounded-2xl border p-5">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
+                    <Icon className="w-6 h-6" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">{title}</h3>
+                    {lines.map((line, i) => <p key={i}>{line}</p>)}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="surface-card p-8 md:p-10 rounded-3xl border">
-            <h3 className="text-2xl font-bold mb-8">أرسل لنا رسالة</h3>
-            <form className="space-y-6">
-              <div><label className="block text-sm font-medium mb-2">الاسم الكريم</label><input type="text" className="w-full px-5 py-4 rounded-xl border focus:outline-none transition-all" placeholder="أدخل اسمك" /></div>
-              <div><label className="block text-sm font-medium mb-2">رقم الجوال</label><input type="tel" className="w-full px-5 py-4 rounded-xl border focus:outline-none transition-all" placeholder="05xxxxxxxx" /></div>
-              <div>
-                <label className="block text-sm font-medium mb-2">نوع الخدمة المطلوبة</label>
-                <select className="w-full px-5 py-4 rounded-xl border focus:outline-none transition-all appearance-none bg-white">
-                  <option>عزل مائي</option><option>عزل حراري</option><option>عزل فوم</option><option>عزل خزانات</option><option>كشف تسربات المياه</option><option>أخرى</option>
-                </select>
-              </div>
-              <div><label className="block text-sm font-medium mb-2">رسالتك أو تفاصيل الطلب</label><textarea rows={4} className="w-full px-5 py-4 rounded-xl border focus:outline-none transition-all resize-none" placeholder="اكتب تفاصيل طلبك هنا..."></textarea></div>
-              <button type="button" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-95"><Send className="w-5 h-5" /><span>إرسال الطلب</span></button>
-            </form>
+            <h2 className="text-2xl font-bold mb-8">أرسل لنا رسالة</h2>
+            <ContactForm />
           </div>
         </div>
 
