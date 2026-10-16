@@ -17,12 +17,18 @@ const serviceGalleryImages = [
 ];
 
 const servicesList = [
-  { icon: <Shield className="w-10 h-10" />, title: "عزل مائي للأسطح", desc: "نقدم أفضل حلول العزل المائي للأسطح لمنع تسرب مياه الأمطار والرطوبة وحماية المبنى من التشققات والتصدعات بأفضل المواد. نضمن عدم وصول المياه إلى البنية التحتية للمبنى مما يحافظ على عمره الافتراضي." },
-  { icon: <Droplet className="w-10 h-10" />, title: "عزل حراري", desc: "عزل حراري متطور يعمل على خفض درجات الحرارة داخل المبنى وتقليل استهلاك الكهرباء للمكيفات، لبيئة أكثر راحة واقتصادية. نستخدم مواد عالية الكفاءة في العزل الحراري تناسب أجواء المملكة." },
-  { icon: <Shield className="w-10 h-10" />, title: "عزل فوم بولي يوريثان", desc: "أحدث تقنيات العزل المزدوج (مائي وحراري) باستخدام الفوم، يتميز بخفة وزنه ومقاومته العالية للظروف المناخية القاسية، ويعتبر الخيار الأمثل للأسطح المعدنية والخرسانية لضمان حماية لا مثيل لها." },
-  { icon: <Droplet className="w-10 h-10" />, title: "عزل وتنظيف الخزانات", desc: "عزل داخلي وخارجي لخزانات المياه الأرضية والعلوية لمنع التسربات والحفاظ على نقاء المياه مع خدمة التنظيف والتعقيم لضمان مياه صحية وآمنة لعائلتك." },
-  { icon: <Shield className="w-10 h-10" />, title: "كشف تسربات المياه", desc: "كشف دقيق لتسربات المياه إلكترونياً بدون تكسير باستخدام أحدث الأجهزة والتقنيات الصوتية والحرارية، مع إصلاح الخلل بضمان معتمد وتقارير مفصلة لحل المشكلة من جذورها." },
-  { icon: <Droplet className="w-10 h-10" />, title: "عزل المسابح", desc: "خدمات عزل المسابح باستخدام أفضل مواد الإيبوكسي والمواد العازلة لمنع تسرب المياه وإطالة العمر الافتراضي للمسبح، مع ضمان حماية الهيكل الإنشائي من التآكل." }
+  { Icon: Shield, title: "عزل مائي للأسطح", desc: "نقدم أفضل حلول العزل المائي للأسطح لمنع تسرب مياه الأمطار والرطوبة وحماية المبنى من التشققات والتصدعات بأفضل المواد. نضمن عدم وصول المياه إلى البنية التحتية للمبنى مما يحافظ على عمره الافتراضي." },
+  { Icon: Droplet, title: "عزل حراري", desc: "عزل حراري متطور يعمل على خفض درجات الحرارة داخل المبنى وتقليل استهلاك الكهرباء للمكيفات، لبيئة أكثر راحة واقتصادية. نستخدم مواد عالية الكفاءة في العزل الحراري تناسب أجواء المملكة." },
+  { Icon: Shield, title: "عزل فوم بولي يوريثان", desc: "أحدث تقنيات العزل المزدوج (مائي وحراري) باستخدام الفوم، يتميز بخفة وزنه ومقاومته العالية للظروف المناخية القاسية، ويعتبر الخيار الأمثل للأسطح المعدنية والخرسانية لضمان حماية لا مثيل لها." },
+  { Icon: Droplet, title: "عزل وتنظيف الخزانات", desc: "عزل داخلي وخارجي لخزانات المياه الأرضية والعلوية لمنع التسربات والحفاظ على نقاء المياه مع خدمة التنظيف والتعقيم لضمان مياه صحية وآمنة لعائلتك." },
+  { Icon: Shield, title: "كشف تسربات المياه", desc: "كشف دقيق لتسربات المياه إلكترونياً بدون تكسير باستخدام أحدث الأجهزة والتقنيات الصوتية والحرارية، مع إصلاح الخلل بضمان معتمد وتقارير مفصلة لحل المشكلة من جذورها." },
+  { Icon: Droplet, title: "عزل المسابح", desc: "خدمات عزل المسابح باستخدام أفضل مواد الإيبوكسي والمواد العازلة لمنع تسرب المياه وإطالة العمر الافتراضي للمسبح، مع ضمان حماية الهيكل الإنشائي من التآكل." }
+];
+
+const eachServiceIncludes = [
+  "تنفيذ سريع واحترافي",
+  "مواد معتمدة عالمياً",
+  "ضمان على جودة العمل",
 ];
 
 export default function ServicesPage() {
@@ -35,16 +41,21 @@ export default function ServicesPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {servicesList.map((service, index) => (
-            <div key={index} className="surface-card rounded-2xl border p-8 transition-all flex flex-col xl:flex-row gap-6 items-start">
-              <div className="icon-well w-20 h-20 rounded-2xl flex items-center justify-center shrink-0">{service.icon}</div>
+          {servicesList.map(({ Icon, title, desc }) => (
+            <div key={title} className="surface-card rounded-2xl border p-8 transition-all flex flex-col xl:flex-row gap-6 items-start">
+              <div className="icon-well w-20 h-20 rounded-2xl flex items-center justify-center shrink-0">
+                <Icon className="w-10 h-10" aria-hidden="true" />
+              </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="leading-relaxed mb-6">{service.desc}</p>
+                <h2 className="text-2xl font-bold mb-4">{title}</h2>
+                <p className="leading-relaxed mb-6">{desc}</p>
                 <ul className="space-y-2">
-                  <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-green-500" /> تنفيذ سريع واحترافي</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-green-500" /> مواد معتمدة عالمياً</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-green-500" /> ضمان على جودة العمل</li>
+                  {eachServiceIncludes.map((item) => (
+                    <li key={item} className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-500" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -59,9 +70,9 @@ export default function ServicesPage() {
         <ImageGallery images={serviceGalleryImages} />
 
         <div className="dark-surface rounded-3xl p-10 md:p-16 text-center">
-          <h3 className="text-3xl font-bold mb-4">هل تحتاج إلى خدمة غير مدرجة هنا؟</h3>
+          <h2 className="text-3xl font-bold mb-4">هل تحتاج إلى خدمة غير مدرجة هنا؟</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">نحن نقدم استشارات مجانية وحلول مخصصة لمختلف مشاكل العزل وتسربات المياه. تواصل معنا لمناقشة احتياجاتك مع خبرائنا.</p>
-          <Link href="/contact" className="inline-block bg-white px-10 py-4 rounded-full font-bold transition-colors">تواصل معنا الآن</Link>
+          <Link href="/contact" className="inline-block bg-white px-10 py-4 rounded-full font-bold transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50">تواصل معنا الآن</Link>
         </div>
       </div>
     </div>

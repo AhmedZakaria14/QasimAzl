@@ -6,6 +6,20 @@ export const metadata = {
   description: 'تعرف على شركة عوازل القصيم الرائدة في مجال العزل المائي والحراري',
 };
 
+const promises = [
+  "فريق عمل مدرب ومؤهل على أعلى مستوى",
+  "استخدام مواد عزل معتمدة وعالية الجودة",
+  "إنجاز العمل في الوقت المحدد بكل دقة",
+  "أسعار تنافسية تناسب جميع الميزانيات",
+  "ضمان حقيقي يصل إلى 10 سنوات",
+];
+
+const pillars = [
+  { Icon: Target, title: "رؤيتنا", desc: "أن نكون الشركة المرجعية الأولى والأكثر ثقة في تقديم حلول العزل المتكاملة والمبتكرة على مستوى المملكة." },
+  { Icon: Award, title: "رسالتنا", desc: "حماية مباني عملائنا من العوامل الجوية وتسربات المياه من خلال تقديم خدمات عزل احترافية بضمانات حقيقية." },
+  { Icon: Users, title: "قيمنا", desc: "الشفافية في التعامل، الجودة في التنفيذ، الالتزام بالمواعيد، والحرص الدائم على رضا العملاء التام." },
+];
+
 export default function AboutPage() {
   return (
     <div className="page-content pt-10 pb-24 flex-1">
@@ -28,8 +42,8 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="lg:w-1/2">
-            <h3 className="section-eyebrow mb-2">قصتنا</h3>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">الشركة الرائدة في مجال العزل بمنطقة القصيم</h2>
+            <h2 className="section-eyebrow mb-2">قصتنا</h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">الشركة الرائدة في مجال العزل بمنطقة القصيم</h3>
             <p className="text-slate-600 text-lg leading-relaxed mb-6">
               نحن شركة متخصصة في تقديم جميع خدمات العزل المائي والحراري وعزل الفوم وكشف تسربات المياه بأحدث التقنيات والأجهزة الحديثة. نفخر بخدمة عملائنا في جميع مدن القصيم (بريدة، عنيزة، الرس، البكيرية، البدائع، والمذنب).
             </p>
@@ -37,9 +51,9 @@ export default function AboutPage() {
               على مدار أكثر من 15 عاماً، التزمنا بتقديم أعلى معايير الجودة والموثوقية، مما جعلنا الخيار الأول للعديد من المشاريع السكنية والتجارية. نؤمن بأن الحماية السليمة للمبنى تبدأ من العزل الدقيق.
             </p>
             <ul className="space-y-4 mb-10">
-              {["فريق عمل مدرب ومؤهل على أعلى مستوى", "استخدام مواد عزل معتمدة وعالية الجودة", "إنجاز العمل في الوقت المحدد بكل دقة", "أسعار تنافسية تناسب جميع الميزانيات", "ضمان حقيقي يصل إلى 10 سنوات"].map((item, idx) => (
-                <li key={idx} className="flex items-center gap-3 text-slate-700">
-                  <CheckCircle className="w-6 h-6 text-green-500 shrink-0" />
+              {promises.map((item) => (
+                <li key={item} className="flex items-center gap-3 text-slate-700">
+                  <CheckCircle className="w-6 h-6 text-green-500 shrink-0" aria-hidden="true" />
                   <span className="font-medium">{item}</span>
                 </li>
               ))}
@@ -48,21 +62,15 @@ export default function AboutPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="surface-card p-8 rounded-2xl border text-center transition-shadow">
-            <div className="icon-well w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"><Target className="w-8 h-8" /></div>
-            <h3 className="text-xl font-bold mb-4">رؤيتنا</h3>
-            <p>أن نكون الشركة المرجعية الأولى والأكثر ثقة في تقديم حلول العزل المتكاملة والمبتكرة على مستوى المملكة.</p>
-          </div>
-          <div className="surface-card p-8 rounded-2xl border text-center transition-shadow">
-            <div className="icon-well w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"><Award className="w-8 h-8" /></div>
-            <h3 className="text-xl font-bold mb-4">رسالتنا</h3>
-            <p>حماية مباني عملائنا من العوامل الجوية وتسربات المياه من خلال تقديم خدمات عزل احترافية بضمانات حقيقية.</p>
-          </div>
-          <div className="surface-card p-8 rounded-2xl border text-center transition-shadow">
-            <div className="icon-well w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"><Users className="w-8 h-8" /></div>
-            <h3 className="text-xl font-bold mb-4">قيمنا</h3>
-            <p>الشفافية في التعامل، الجودة في التنفيذ، الالتزام بالمواعيد، والحرص الدائم على رضا العملاء التام.</p>
-          </div>
+          {pillars.map(({ Icon, title, desc }) => (
+            <div key={title} className="surface-card p-8 rounded-2xl border text-center transition-shadow">
+              <div className="icon-well w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Icon className="w-8 h-8" aria-hidden="true" />
+              </div>
+              <h2 className="text-xl font-bold mb-4">{title}</h2>
+              <p>{desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
