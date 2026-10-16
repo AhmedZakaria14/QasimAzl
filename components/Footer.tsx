@@ -2,6 +2,12 @@ import Link from "next/link";
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, ChevronLeft } from "lucide-react";
 import LogoIcon from "@/components/LogoIcon";
 
+const socialLinks = [
+  { Icon: Facebook, label: "فيسبوك" },
+  { Icon: Twitter, label: "إكس (تويتر)" },
+  { Icon: Instagram, label: "إنستغرام" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-[#1d0e63] text-[#ded9f3] pt-20 pb-8 relative overflow-hidden">
@@ -12,12 +18,12 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-3 mb-6 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
               <LogoIcon className="w-14 h-14" />
-              <div><h2 className="text-2xl font-black text-white">عوازل القصيم</h2><p className="text-xs text-[#bdb4e6] mt-1">للعزل وكشف التسربات</p></div>
+              <div><p className="text-2xl font-black text-white">عوازل القصيم</p><p className="text-xs text-[#bdb4e6] mt-1">للعزل وكشف التسربات</p></div>
             </Link>
             <p className="leading-8 text-[#c9c3e3] mb-6">الشركة الرائدة في مجال العزل المائي والحراري وعزل الفوم وكشف تسربات المياه في منطقة القصيم.</p>
             <div className="flex gap-3">
-              {[Facebook, Twitter, Instagram].map((Icon, index) => (
-                <a key={index} href="#" aria-label="حساب التواصل الاجتماعي" className="w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center text-[#ded9f3] hover:bg-[#7bbb3f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 transition-colors"><Icon className="w-5 h-5" /></a>
+              {socialLinks.map(({ Icon, label }) => (
+                <a key={label} href="#" aria-label={`حسابنا على ${label}`} className="w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center text-[#ded9f3] hover:bg-[#7bbb3f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 transition-colors"><Icon className="w-5 h-5" aria-hidden="true" /></a>
               ))}
             </div>
           </div>
@@ -26,11 +32,11 @@ export default function Footer() {
           <FooterColumn title="خدماتنا" items={[['عزل مائي','/services'],['عزل حراري','/services'],['عزل فوم','/services'],['عزل خزانات','/services'],['كشف تسربات المياه','/services']]} />
 
           <div>
-            <FooterTitle>معلومات التواصل</FooterTitle>
+            <h2 className="text-white text-lg font-black mb-7 relative pb-3 after:absolute after:right-0 after:bottom-0 after:w-12 after:h-1 after:rounded-full after:bg-[#7bbb3f]">معلومات التواصل</h2>
             <ul className="space-y-5">
-              <li className="flex items-start gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><MapPin className="w-6 h-6 text-[#a9d66c] shrink-0 mt-1" /><span>المملكة العربية السعودية<br/>القصيم - بريدة</span></li>
-              <li className="flex items-center gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><Phone className="w-6 h-6 text-[#a9d66c] shrink-0" /><span dir="ltr" className="font-bold text-white">050 000 0000</span></li>
-              <li className="flex items-center gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><Mail className="w-6 h-6 text-[#a9d66c] shrink-0" /><span className="break-all">info@qassim-insulation.com</span></li>
+              <li className="flex items-start gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><MapPin className="w-6 h-6 text-[#a9d66c] shrink-0 mt-1" aria-hidden="true" /><span>المملكة العربية السعودية<br/>القصيم - بريدة</span></li>
+              <li className="flex items-center gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><Phone className="w-6 h-6 text-[#a9d66c] shrink-0" aria-hidden="true" /><a href="tel:+966500000000" dir="ltr" className="font-bold text-white rounded-md hover:text-[#a9d66c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a9d66c]">050 000 0000</a></li>
+              <li className="flex items-center gap-4 rounded-xl bg-white/5 p-4 border border-white/5"><Mail className="w-6 h-6 text-[#a9d66c] shrink-0" aria-hidden="true" /><a href="mailto:info@qassim-insulation.com" className="break-all rounded-md hover:text-[#a9d66c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a9d66c]">info@qassim-insulation.com</a></li>
             </ul>
           </div>
         </div>
@@ -55,10 +61,6 @@ export default function Footer() {
   );
 }
 
-function FooterTitle({children}: {children: React.ReactNode}) {
-  return <h4 className="text-white text-lg font-black mb-7 relative pb-3 after:absolute after:right-0 after:bottom-0 after:w-12 after:h-1 after:rounded-full after:bg-[#7bbb3f]">{children}</h4>;
-}
-
 function FooterColumn({title, items}: {title: string; items: [string, string][]}) {
-  return <div><FooterTitle>{title}</FooterTitle><ul className="space-y-3">{items.map(([label, href]) => <li key={label}><Link href={href} className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-[#ded9f3] hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 transition-colors"><ChevronLeft className="w-4 h-4 text-[#a9d66c]" />{label}</Link></li>)}</ul></div>;
+  return <nav aria-label={title}><h2 className="text-white text-lg font-black mb-7 relative pb-3 after:absolute after:right-0 after:bottom-0 after:w-12 after:h-1 after:rounded-full after:bg-[#7bbb3f]">{title}</h2><ul className="space-y-3">{items.map(([label, href]) => <li key={label}><Link href={href} className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-[#ded9f3] hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 transition-colors"><ChevronLeft className="w-4 h-4 text-[#a9d66c]" aria-hidden="true" />{label}</Link></li>)}</ul></nav>;
 }

@@ -31,23 +31,23 @@ export default function Icon() {
           style={{ width: '100%', height: '100%' }}
           fill="none"
         >
-          {/* Main Shield / Hexagon Base */}
+          {/* Shield base, matching LogoIcon */}
           <path
             d="M50 5 L90 20 V50 C90 75 50 95 50 95 C50 95 10 75 10 50 V20 L50 5 Z"
-            fill="#2563eb"
+            fill="#291686"
           />
-          {/* Roof Element inside */}
+          {/* Roof element */}
           <path
             d="M25 45 L50 25 L75 45"
-            stroke="#ea580c"
+            stroke="#ffffff"
             strokeWidth="6"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
-          {/* Central Droplet Element */}
+          {/* Central droplet */}
           <path
             d="M50 35 C50 35 35 55 35 65 C35 73.284 41.716 80 50 80 C58.284 80 65 73.284 65 65 C65 55 50 35 50 35 Z"
-            fill="#f97316"
+            fill="#7bbb3f"
           />
         </svg>
       </div>
